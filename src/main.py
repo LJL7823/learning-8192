@@ -2,6 +2,8 @@
 8192 game
 """
 import logic
+import tkinter as tk
+import os
 
 
 def main():
@@ -59,4 +61,11 @@ def main():
 
 
 if __name__ == '__main__':
+    game_screen = tk.Tk()
+    frm = tk.Frame(game_screen)
+    frm.grid()
+    tk.Label(frm, text="Hello World!").grid(column=0, row=0)
+    tk.Button(frm, text="Quit", command=game_screen.destroy).grid(column=1,
+                                                                  row=0)
+    game_screen.mainloop()
     main()

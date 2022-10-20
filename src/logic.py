@@ -40,14 +40,15 @@ def has_lost(matrix) -> bool:
     for i in range(3):
         for j in range(3):
             if matrix[i][j] == matrix[i + 1][j] or \
-                matrix[i][j] == matrix[i][j + 1]:
+                    matrix[i][j] == matrix[i][j + 1]:
                 return False
-    for i in range(3):
-        if matrix[3][i] == matrix[3][i + 1]:
-            return False
     for i in range(3):
         if matrix[j][3] == matrix[j + 1][3]:
             return False
+    for i in range(3):
+        if matrix[3][i] == matrix[3][i + 1]:
+            return False
+
     return True
 
 
