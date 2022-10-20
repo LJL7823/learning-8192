@@ -13,7 +13,7 @@ def main():
         new_mat = []
         x = input("Press the command : ")
         if x == 'W' or x == 'w':
-            new_mat, flag = logic.move_up(mat)
+            new_mat = logic.move_up(mat)
             status = logic.has_lost(new_mat)
             print(status)
             if not status:
@@ -21,7 +21,7 @@ def main():
             else:
                 break
         elif x == 'S' or x == 's':
-            new_mat, flag = logic.move_down(mat)
+            new_mat = logic.move_down(mat)
             status = logic.has_lost(new_mat)
             print(status)
             if not status:
@@ -31,7 +31,7 @@ def main():
 
         # to move left
         elif x == 'A' or x == 'a':
-            new_mat, flag = logic.move_left(mat)
+            new_mat = logic.move_left(mat)
             status = logic.has_lost(new_mat)
             print(status)
             if not status:
@@ -41,7 +41,7 @@ def main():
 
         # to move right
         elif x == 'D' or x == 'd':
-            new_mat, flag = logic.move_right(mat)
+            new_mat = logic.move_right(mat)
             status = logic.has_lost(new_mat)
             print(status)
             if not status:
@@ -57,7 +57,7 @@ def main():
         # move.
         mat = new_mat
         print("\t", new_mat[0], '\n\t', new_mat[1], '\n\t', new_mat[2], '\n\t',
-              new_mat[3], '\n\t')
+              new_mat[3])
 
 
 if __name__ == '__main__':
