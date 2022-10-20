@@ -138,7 +138,7 @@ def move_right(grid):
     :return: the matrix grid
     """
     new_grid = reverse(grid)
-    new_grid= move_left(new_grid)
+    new_grid = move_left(new_grid)
     new_grid = reverse(new_grid)
     return new_grid
 
@@ -168,6 +168,6 @@ def move_down(grid):
 
 
 def move_all(layer, grid):
+    if hex(layer) == 0x0:
+        pass
 
-     if None:
-         pass
