@@ -58,28 +58,22 @@ def has_lost(matrix) -> bool:
 
 
 def smash(matrix):
-    changed = False
-    new_matrix = []
-    for i in range(4):
-        new_matrix.append([0] * 4)
+    new_matrix = [[0] * 4 for i in range(4)]
     for i in range(4):
         pos = 0
         for j in range(4):
             if matrix[i][j] != 0:
                 new_matrix[i][pos] = matrix[i][j]
-                if j != pos:
-                    changed = True
                 pos += 1
 
-    return new_matrix, changed
+    return new_matrix, matrix == new_matrix
 
 
 def merge(matrix):
     changed = False
-
     for i in range(4):
         for j in range(3):
-            if matrix[i][j] == matrix[i][j + 1] and matrix[i][j] != 0:
+            if matrix[i][j] == ((not 0) and matrix[i][j + 1]):
                 matrix[i][j] = matrix[i][j] * 2
                 matrix[i][j + 1] = 0
                 changed = True
@@ -87,20 +81,16 @@ def merge(matrix):
 
 
 def reverse(matrix):
-    new_matrix = []
+    new_matrix = [[] for i in range(4)]
     for i in range(4):
-        new_matrix.append([])
-        for j in range(4):
-            new_matrix[i].append(matrix[i][3 - j])
+        new_matrix[i].extend(matrix[i][3 - j] for j in range(4))
     return new_matrix
 
 
 def transpose(matrix):
-    new_matrix = []
+    new_matrix = [[] for i in range(4)]
     for i in range(4):
-        new_matrix.append([])
-        for j in range(4):
-            new_matrix[i].append(matrix[j][i])
+        new_matrix[i].extend(matrix[j][i] for j in range(4))
     return new_matrix
 
 
